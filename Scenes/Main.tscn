@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=7 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="1_pvi3p"]
 [ext_resource type="Texture2D" uid="uid://bdtd2dlketfn2" path="res://icon.svg" id="2_vsdhe"]
 [ext_resource type="PackedScene" uid="uid://elvsf2pqwa8n" path="res://portal_a.tscn" id="3_vb7kc"]
 [ext_resource type="PackedScene" uid="uid://c3o1menu3bti2" path="res://portal_b.tscn" id="4_55uln"]
 [ext_resource type="PackedScene" uid="uid://cpdlhkkpp5qla" path="res://Scenes/enemy.tscn" id="5_op2xl"]
+[ext_resource type="Script" path="res://Scenes/enemy_spawn.gd" id="6_l84uy"]
 
 [node name="Main" type="Node2D"]
 
@@ -25,3 +26,7 @@ target_portal = NodePath("../PortalA")
 
 [node name="Enemy" parent="." instance=ExtResource("5_op2xl")]
 position = Vector2(431, 409)
+
+[node name="EnemySpawn" type="Node2D" parent="."]
+position = Vector2(544, 288)
+script = ExtResource("6_l84uy")
