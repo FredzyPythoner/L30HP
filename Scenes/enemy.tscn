@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpdlhkkpp5qla"]
+[gd_scene load_steps=5 format=3 uid="uid://cpdlhkkpp5qla"]
 
 [ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_eoybj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdsy"]
 size = Vector2(32, 32)
+
+[sub_resource type="Curve" id="Curve_x8kyg"]
+max_value = 2.0
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_3he2j"]
+offsets = PackedFloat32Array(0, 0.52, 1)
+colors = PackedColorArray(0.584314, 0.0862745, 0, 1, 0.94, 0.325867, 0.0188, 1, 1, 1, 1, 1)
 
 [node name="Enemy" type="CharacterBody2D" groups=["mobs"]]
 scale = Vector2(0.5, 0.5)
@@ -17,3 +26,20 @@ polygon = PackedVector2Array(0, 24, -8, 24, -8, 8, 8, 8, 8, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ngdsy")
+
+[node name="Explosion" type="CPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 250
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.42
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 80.0
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_x8kyg")
+color_ramp = SubResource("Gradient_3he2j")

@@ -10,11 +10,15 @@ func take_damage(amount: int):
 	print("Remaining health: ", health)
 
 	if health <= 0:
+		
 		die()
 		kill()
 
 func die():
 	print("Enemy has died!")
+	$Polygon2D.visible = false
+	$Explosion.emitting = true
+	await $Explosion.finished
 	queue_free()  # This will remove the player from the scene
 
 func kill():
