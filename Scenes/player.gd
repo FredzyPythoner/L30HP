@@ -46,6 +46,7 @@ func _physics_process(delta):
 	move_and_slide()
 	if Input.is_action_just_pressed("fire"):
 		shoot()
+		$fireparticles.emitting = true
 		
 		
 

@@ -5,3 +5,6 @@
 
 [node name="PortalB" instance=ExtResource("1_h5h2x")]
 script = ExtResource("2_dgd45")
+
+[node name="Area2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
