@@ -8,10 +8,13 @@ var health: int = 100
 @export var Bullet : PackedScene
 @onready var portal_a = $PortalA # Path to Portal A
 @onready var portal_b = $PortalB # Path to Portal B
+@onready var sound_player = $"../AudioShoot"  # Adjust the path if necessary
 
 
 func teleport(target_portal):
 	global_position = target_portal.global_position
+
+
 
 func _physics_process(delta):
 	# Get the mouse position in global coordinates
@@ -46,11 +49,18 @@ func _physics_process(delta):
 	move_and_slide()
 	if Input.is_action_just_pressed("fire"):
 		shoot()
+		on_some_event()
 		$fireparticles.emitting = true
-		
-		
+
+func play_sound():
+	sound_player.play()  # This plays the sound
+
+# Example function to call when an event occurs
+func on_some_event():
+	play_sound()  # Call this to play the sound when the event happens
 
 
+		
 
 func shoot():
 	var b = Bullet.instantiate()
