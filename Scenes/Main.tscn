@@ -21,8 +21,6 @@ glow_blend_mode = 0
 
 [node name="Main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_j3jhu")]
-
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1176.0
 offset_bottom = 664.0
@@ -54,3 +52,5 @@ player = NodePath("../Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qdq0q")
+
+[node name="Killcount" parent="." instance=ExtResource("1_j3jhu")]

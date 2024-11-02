@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dksbi625srbln"]
 
-[ext_resource type="PackedScene" path="res://Scenes/kill_count.tscn" id="1_0iyby"]
+[ext_resource type="PackedScene" uid="uid://dvakpfq57ert1" path="res://Scenes/kill_count.tscn" id="1_0iyby"]
 
 [node name="Killcount" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="KillCount" parent="CanvasLayer" instance=ExtResource("1_0iyby")]
+scale = Vector2(0.2, 0.224)

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm0bted0gw1i7"]
+[gd_scene load_steps=4 format=3 uid="uid://dvakpfq57ert1"]
 
+[ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="1_hisys"]
 [ext_resource type="Script" path="res://Scenes/label.gd" id="1_xmuon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdadd"]
+font = ExtResource("1_hisys")
+font_size = 1000
 
 [node name="KillCount" type="Node2D"]
 position = Vector2(3, 2)
@@ -13,4 +18,5 @@ scale = Vector2(0.589691, 0.466199)
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 1000
 text = "0"
+label_settings = SubResource("LabelSettings_rdadd")
 script = ExtResource("1_xmuon")
