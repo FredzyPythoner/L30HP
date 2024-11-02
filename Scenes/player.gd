@@ -53,7 +53,7 @@ func _physics_process(delta):
 		$fireparticles.emitting = true
 
 func play_sound():
-	sound_player.play()  # This plays the sound
+	sound_player.play()  # This plays the sasound
 
 # Example function to call when an event occurs
 func on_some_event():
