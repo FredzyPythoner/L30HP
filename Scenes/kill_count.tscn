@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm0bted0gw1i7"]
+
+[ext_resource type="Script" path="res://Scenes/label.gd" id="1_xmuon"]
+
+[node name="KillCount" type="Node2D"]
+position = Vector2(3, 2)
+scale = Vector2(0.464905, 0.518919)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 329.0
+offset_bottom = 195.0
+scale = Vector2(0.589691, 0.466199)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 1000
+text = "0"
+script = ExtResource("1_xmuon")

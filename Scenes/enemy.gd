@@ -11,12 +11,16 @@ func take_damage(amount: int):
 
 	if health <= 0:
 		die()
+		kill()
 
 func die():
 	print("Enemy has died!")
 	queue_free()  # This will remove the player from the scene
 
- 
+func kill():
+	Global.kills += 1  # Increment global kills counter
+	print("Total kills: ", Global.kills)
+
 func _on_area_entered(area):
 	# area er skud
 	print("Enemy on_area_entered")
