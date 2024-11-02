@@ -1,23 +1,82 @@
-extends Area2D
+extends CharacterBody2D
 
-# Speed of the player movement in pixels per second
-var speed = 400
+
+# Movement speed variable
+var speed = 200
+var health: int = 100
+
+@export var Bullet : PackedScene
+@onready var portal_a = $PortalA # Path to Portal A
+@onready var portal_b = $PortalB # Path to Portal B
+
+
+func teleport(target_portal):
+	global_position = target_portal.global_position
 
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
+	# Get the mouse position in global coordinates
+	var mouse_position = get_global_mouse_position()
 
-	# Check for movement input
+	# Rotate to face the mouse position
+	look_at(mouse_position)
+
+	# Initialize velocity
+	velocity = Vector2()
+
+	# Use up/down keys to control vertical movement
 	if Input.is_action_pressed("move_up"):
-		input_vector.y -= 1
+		velocity.y -= 1  # Always move up in world space
 	if Input.is_action_pressed("move_down"):
-		input_vector.y += 1
-	if Input.is_action_pressed("move_left"):
-		input_vector.x -= 1
-	if Input.is_action_pressed("move_right"):
-		input_vector.x += 1
+		velocity.y += 1  # Always move down in world space
 
-	# Normalize the input vector to prevent faster diagonal movement
-	if input_vector != Vector2.ZERO:
-		input_vector = input_vector.normalized()
-		# Move the player
-		position += input_vector * speed * delta
+	# Use left/right keys to control horizontal movement
+	if Input.is_action_pressed("move_right"):
+		velocity.x += 1  # Always move right in world space
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= 1  # Always move left in world space
+
+	# Normalize the velocity to maintain consistent speed
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+
+	# Set the CharacterBody2D's velocity
+	self.velocity = velocity
+
+	# Move the CharacterBody2D
+	move_and_slide()
+	if Input.is_action_just_pressed("fire"):
+		shoot()
+		
+		
+
+
+
+func shoot():
+	var b = Bullet.instantiate()
+	get_parent().add_child(b)
+	b.global_transform = $Muzzle.global_transform
+
+
+func take_damage(amount: int):
+	health -= amount
+	print("Player took damage: ", amount)
+	print("Remaining health: ", health)
+
+	if health <= 0:
+		die()
+
+func die():
+	print("Player has died!")
+	#queue_free()  # This will remove the player from the scene
+	get_tree().paused = true
+
+
+var player: Node2D
+
+func _ready():
+	# Get the player node from the "Player" group
+	var players = get_tree().get_nodes_in_group("Player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		print("Player not found in the scene tree.")

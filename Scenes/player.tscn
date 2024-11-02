@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2eda7jlsd8uw"]
+[gd_scene load_steps=4 format=3 uid="uid://b2eda7jlsd8uw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dso0s"]
-[ext_resource type="Texture2D" uid="uid://bdtd2dlketfn2" path="res://icon.svg" id="1_ysjub"]
+[ext_resource type="PackedScene" uid="uid://6fgolk01go3h" path="res://Scenes/bullet.tscn" id="2_b738u"]
 
-[node name="Player" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2itow"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dso0s")
+Bullet = ExtResource("2_b738u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2itow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ysjub")
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-32, -32)
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(64, 64, 72, 32, 64, 0, 32, 8, 0, 0, -8, 32, 0, 64, 32, 56)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(48, 0)
