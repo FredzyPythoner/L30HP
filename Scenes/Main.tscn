@@ -27,6 +27,7 @@ target_portal = NodePath("../PortalA")
 [node name="Enemy" parent="." instance=ExtResource("5_op2xl")]
 position = Vector2(431, 409)
 
-[node name="EnemySpawn" type="Node2D" parent="."]
+[node name="EnemySpawn" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(544, 288)
 script = ExtResource("6_l84uy")
+player = NodePath("../Player")

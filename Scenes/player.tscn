@@ -21,3 +21,4 @@ color = Color(1, 0, 1, 1)
 polygon = PackedVector2Array(64, 64, 72, 32, 64, 0, 32, 8, 0, 0, -8, 32, 0, 64, 32, 56)
 
 [node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(48, 0)

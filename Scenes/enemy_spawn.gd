@@ -3,7 +3,8 @@ extends Node2D
 # Exported variables
 @export var enemy_scene = preload("res://Scenes/enemy.tscn")
 @export var spawn_area = Vector2(2000, 2000) # Define the spawn area size
-@export var spawn_interval = 1.0           # Time in seconds between spawns
+@export var spawn_interval = 1.0        # Time in seconds between spawns
+@export var player: Node2D
 
 # Internal timer for spawning
 var _spawn_timer = 5
@@ -24,6 +25,7 @@ func _process(delta):
 func spawn_enemy():
 	# Instance a new enemy
 	var enemy_instance = enemy_scene.instantiate()
+	enemy_instance.player = player
 
 	# Randomize the enemy's position within the spawn area
 	var random_position = Vector2(

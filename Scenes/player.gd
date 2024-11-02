@@ -21,7 +21,7 @@ func _physics_process(delta):
 	look_at(mouse_position)
 
 	# Initialize velocity
-	var velocity = Vector2()
+	velocity = Vector2()
 
 	# Use up/down keys to control vertical movement
 	if Input.is_action_pressed("move_up"):
@@ -46,6 +46,11 @@ func _physics_process(delta):
 	move_and_slide()
 	if Input.is_action_just_pressed("fire"):
 		shoot()
+		
+		
+
+
+
 func shoot():
 	var b = Bullet.instantiate()
 	get_parent().add_child(b)
@@ -62,4 +67,16 @@ func take_damage(amount: int):
 
 func die():
 	print("Player has died!")
-	queue_free()  # This will remove the player from the scene
+	#queue_free()  # This will remove the player from the scene
+	get_tree().paused = true
+
+
+var player: Node2D
+
+func _ready():
+	# Get the player node from the "Player" group
+	var players = get_tree().get_nodes_in_group("Player")
+	if players.size() > 0:
+		player = players[0]
+	else:
+		print("Player not found in the scene tree.")

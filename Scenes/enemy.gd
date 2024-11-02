@@ -1,7 +1,8 @@
-extends Area2D
+extends CharacterBody2D
 
 var damage: int = 20
 var health: int = 100
+var player: Node2D
 
 func take_damage(amount: int):
 	health -= amount
@@ -12,14 +13,27 @@ func take_damage(amount: int):
 		die()
 
 func die():
-	print("Player has died!")
+	print("Enemy has died!")
 	queue_free()  # This will remove the player from the scene
 
-
+ 
 func _on_area_entered(area):
+	# area er skud
+	print("Enemy on_area_entered")
 	take_damage(damage)
 
-@export var player: CharacterBody2D
-
 func _process(delta: float) -> void:
-	$".".transform.Position += (player.position - position).normalized() * delta * 20
+	if player:
+		velocity = (player.global_position - global_position).normalized() * 100
+		var collision = move_and_collide(velocity * delta)
+		if collision and collision.get_collider().has_method("take_damage"):
+			collision.get_collider().take_damage(10)
+			queue_free()
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	print("Enemy on_body_entered")
+	# fjende rammer player
+	body.take_damage(damage)
+	queue_free()
