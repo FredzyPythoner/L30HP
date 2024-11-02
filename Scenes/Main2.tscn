@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_5xiw8"]
 [ext_resource type="AudioStream" uid="uid://84ffo1oitnrx" path="res://Assets/Sounds/laserShoot2.wav" id="9_li6gk"]
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -643.0
