@@ -1,24 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://elvsf2pqwa8n"]
+[gd_scene load_steps=3 format=3 uid="uid://elvsf2pqwa8n"]
 
 [ext_resource type="Script" path="res://PortalA.gd" id="1_fp4wu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_glv3c"]
-radius = 65.0308
-
-[sub_resource type="SphereMesh" id="SphereMesh_lrkb8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3npj2"]
+radius = 24.0
+height = 96.0
 
 [node name="PortalA" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_fp4wu")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+position = Vector2(-8, 0)
+scale = Vector2(2, 2)
+color = Color(0.12549, 0.211765, 0.443137, 1)
+polygon = PackedVector2Array(0, -24, -8, -16, -8, 16, 0, 24, 8, 24, 16, 16, 16, -16, 8, -24)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_glv3c")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
-position = Vector2(-0.500005, 2.24113e-05)
-scale = Vector2(123.139, 126)
-mesh = SubResource("SphereMesh_lrkb8")
+shape = SubResource("CapsuleShape2D_3npj2")
