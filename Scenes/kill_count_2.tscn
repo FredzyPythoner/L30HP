@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwj3nj7gj7c0q"]
+[gd_scene load_steps=2 format=3 uid="uid://dksbi625srbln"]
 
-[ext_resource type="PackedScene" uid="uid://bm0bted0gw1i7" path="res://Scenes/kill_count.tscn" id="1_0iyby"]
+[ext_resource type="PackedScene" path="res://Scenes/kill_count.tscn" id="1_0iyby"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Killcount" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
