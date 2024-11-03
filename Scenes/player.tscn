@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2eda7jlsd8uw"]
+[gd_scene load_steps=8 format=3 uid="uid://b2eda7jlsd8uw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dso0s"]
 [ext_resource type="PackedScene" uid="uid://6fgolk01go3h" path="res://Scenes/bullet.tscn" id="2_b738u"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_fygl8"]
+[ext_resource type="Texture2D" uid="uid://cx3o3stj6bky7" path="res://Assets/player3.png" id="4_kndeb"]
 [ext_resource type="Texture2D" uid="uid://buqhaeq5jnq6q" path="res://radial-gradient.png" id="4_wqg7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2itow"]
@@ -27,21 +28,24 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.05
 script = ExtResource("3_fygl8")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(-32, -32)
-color = Color(0.211765, 0.52549, 0.560784, 1)
-polygon = PackedVector2Array(56, 16, 32, 0, -8, 0, -8, 64, 32, 64, 56, 48)
-
-[node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
 color = Color(0.835294, 0.835294, 0.843137, 1)
 polygon = PackedVector2Array(40, 8, 32, 0, 80, 0, 80, 8, 80, 16, 40, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_kndeb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_2itow")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(48, -24)
+position = Vector2(42, -26)
 
 [node name="fireparticles" type="CPUParticles2D" parent="."]
 position = Vector2(48, -24)
