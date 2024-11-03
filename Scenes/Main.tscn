@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=20 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
 [ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_nxcho"]
@@ -27,10 +27,7 @@ glow_levels/4 = 1.0
 glow_blend_mode = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sniuc"]
-size = Vector2(890, 20)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ykloo"]
-radius = 109.651
+size = Vector2(1816, 22)
 
 [node name="Main" type="Node2D"]
 
@@ -40,14 +37,17 @@ position = Vector2(592, 336)
 texture = ExtResource("1_nxcho")
 
 [node name="Scene3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.686275, 0.611765, 0.686275, 1)
 position = Vector2(528, 229)
 scale = Vector2(1.61023, 2.12276)
 texture = ExtResource("2_uyt5w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 1176.0
-offset_bottom = 664.0
+offset_left = -304.0
+offset_top = -226.0
+offset_right = 1485.0
+offset_bottom = 859.0
 color = Color(0.0588235, 0.0196078, 0.176471, 1)
 
 [node name="Sten" type="Sprite2D" parent="."]
@@ -103,25 +103,25 @@ stream = ExtResource("9_i4070")
 volume_db = -13.867
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.5
+energy = 1.75
 texture = ExtResource("10_3w2fj")
 texture_scale = 3.0
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(0, 664)
-energy = 0.5
+energy = 1.75
 texture = ExtResource("10_3w2fj")
 texture_scale = 3.0
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
 position = Vector2(1176, 664)
-energy = 0.5
+energy = 1.75
 texture = ExtResource("10_3w2fj")
 texture_scale = 3.0
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
 position = Vector2(1176, 0)
-energy = 0.5
+energy = 1.75
 texture = ExtResource("10_3w2fj")
 texture_scale = 3.0
 
@@ -148,167 +148,21 @@ player = NodePath("../../Player")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(492, -207)
+position = Vector2(586, -224)
+shape = SubResource("RectangleShape2D_sniuc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(589, 852)
 shape = SubResource("RectangleShape2D_sniuc")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-691, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(492, -207)
+position = Vector2(-324, 281)
+rotation = -1.57311
 shape = SubResource("RectangleShape2D_sniuc")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-743, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(492, -207)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1499, 310)
+rotation = -1.57004
 shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(-787, 72)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(-824, 100)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2(-855, 125)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
-position = Vector2(-939, 154)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
-position = Vector2(-940, 181)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="."]
-position = Vector2(-956, 202)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="."]
-position = Vector2(-1011, 229)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="."]
-position = Vector2(-1040, 257)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="."]
-position = Vector2(-363, -54)
-rotation = 1.60375
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
-position = Vector2(492, -207)
-shape = SubResource("RectangleShape2D_sniuc")
-
-[node name="StaticBody2D13" type="StaticBody2D" parent="."]
-position = Vector2(-363, -54)
-rotation = 1.60375
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(602.421, -239.978)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(719.215, -308.863)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(827.376, -457.507)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(866.388, -639.892)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(867.948, -805.033)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(872.276, -977.269)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(879.405, -1155.6)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(866.412, -1337.27)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(816.44, -1517.72)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(677.318, -1610.19)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(502.248, -1700.47)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(346.806, -1711.35)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(173.822, -1677.64)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(21.5974, -1651.61)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-135.812, -1570.38)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-178.58, -1410.88)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-139.261, -1341.14)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-190.728, -1263.4)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-245.303, -1158.55)
-shape = SubResource("CircleShape2D_ykloo")
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(-288.643, -986.026)
-shape = SubResource("CircleShape2D_ykloo")

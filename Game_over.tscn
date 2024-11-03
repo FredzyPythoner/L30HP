@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dht6v1a1vmpk7"]
+[gd_scene load_steps=5 format=3 uid="uid://nnd5gclkof5k"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_xuau7"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="2_wpogg"]
 [ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="3_8fk0q"]
+[ext_resource type="PackedScene" uid="uid://dvakpfq57ert1" path="res://Scenes/kill_count.tscn" id="4_jjufp"]
 
 [node name="gameover" type="Control"]
 layout_mode = 3
@@ -69,6 +70,16 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_8fk0q")
 theme_override_font_sizes/font_size = 500
 text = "Game Over"
+
+[node name="KillCount" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_jjufp")]
+position = Vector2(1379, 670)
+scale = Vector2(0.729977, 0.922385)
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8fk0q")
+theme_override_font_sizes/font_size = 300
+text = "You got:         Kills"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
