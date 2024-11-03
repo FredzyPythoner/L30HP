@@ -19,7 +19,6 @@ script = ExtResource("1_dso0s")
 Bullet = ExtResource("2_b738u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_left_margin = 0.05
