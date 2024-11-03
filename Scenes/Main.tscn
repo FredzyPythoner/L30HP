@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=18 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
 [ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="1_pvi3p"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
 [ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
 [ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
+[ext_resource type="Texture2D" uid="uid://cleyxj5n2h0ye" path="res://Assets/bar_outline_2.png" id="14_10iui"]
+[ext_resource type="Texture2D" uid="uid://mpayuv2it3qc" path="res://Assets/bar2.png" id="15_ghm6b"]
+[ext_resource type="Script" path="res://Scenes/texture_progress_bar.gd" id="16_e6w87"]
 
 [sub_resource type="Environment" id="Environment_qdq0q"]
 background_mode = 3
@@ -103,3 +106,23 @@ position = Vector2(1176, 0)
 energy = 0.5
 texture = ExtResource("10_3w2fj")
 texture_scale = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1315.0
+offset_top = 639.0
+offset_right = -231.0
+offset_bottom = 1663.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.639161, 0.380574)
+texture_under = ExtResource("14_10iui")
+texture_progress = ExtResource("15_ghm6b")
+script = ExtResource("16_e6w87")
+player = NodePath("../../Player")
