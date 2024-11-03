@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtelmfy28r16e"]
+[gd_scene load_steps=6 format=3 uid="uid://dtelmfy28r16e"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4rlnw"]
 [ext_resource type="Texture2D" uid="uid://buqhaeq5jnq6q" path="res://radial-gradient.png" id="2_cg4qw"]
+[ext_resource type="Texture2D" uid="uid://c5lxcesmmk5ir" path="res://Assets/play3.png" id="3_g6dv8"]
+[ext_resource type="Texture2D" uid="uid://dpcvnafn8mgk0" path="res://Assets/credits2.png" id="4_m46cq"]
+[ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="5_befxl"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -50,15 +53,22 @@ texture = ExtResource("2_cg4qw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -425.5
-offset_bottom = 425.5
+offset_left = -490.0
+offset_top = -569.0
+offset_right = 1438.0
+offset_bottom = 1938.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.713502, 0.581531)
+scale = Vector2(0.510454, 0.423459)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.211765, 0.52549, 0.560784, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -66,20 +76,24 @@ layout_mode = 2
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.372549, 0.780392, 0.364706, 1)
 layout_mode = 2
-theme_override_font_sizes/font_size = 200
-text = "Play"
+theme_override_font_sizes/font_size = 100
+icon = ExtResource("3_g6dv8")
+flat = true
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.211765, 0.52549, 0.560784, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 200
-text = "Credits"
+icon = ExtResource("4_m46cq")
+flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-modulate = Color(0.12549, 0.211765, 0.443137, 1)
+modulate = Color(0.450547, 0, 0.080551, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_befxl")
 theme_override_font_sizes/font_size = 200
 text = "Quit"
+flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
