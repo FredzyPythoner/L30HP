@@ -78,6 +78,16 @@ polygon = PackedVector2Array(0, -24, -8, -16, -8, 16, 0, 24, 8, 24, 16, 16, 16, 
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_3npj2")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Area2D"]
+scale = Vector2(3, 3)
+amount = 450
+lifetime = 5.0
+spread = 1.31
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 250.0
+color = Color(0.924311, 0.0007982, 0.941115, 1)
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-1, 0)
 amount = 4510

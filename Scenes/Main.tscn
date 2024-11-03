@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=19 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
+[ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_nxcho"]
 [ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="1_pvi3p"]
 [ext_resource type="Texture2D" uid="uid://g2mneud1y286" path="res://Assets/eddeerkop.png" id="3_o3faf"]
 [ext_resource type="PackedScene" uid="uid://elvsf2pqwa8n" path="res://portal_a.tscn" id="3_vb7kc"]
@@ -10,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_dwb72"]
 [ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="9_i4070"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="10_3w2fj"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
+[ext_resource type="PackedScene" uid="uid://bri4ysn652awf" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
 [ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
 [ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
 [ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="14_5ag2y"]
@@ -20,13 +21,19 @@
 [sub_resource type="Environment" id="Environment_qdq0q"]
 background_mode = 3
 tonemap_mode = 3
+tonemap_exposure = 0.33
 glow_enabled = true
 glow_levels/4 = 1.0
 glow_blend_mode = 0
 
 [node name="Main" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(592, 336)
+texture = ExtResource("1_nxcho")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 1176.0
 offset_bottom = 664.0
 color = Color(0.0588235, 0.0196078, 0.176471, 1)
@@ -51,12 +58,12 @@ position = Vector2(544, 288)
 
 [node name="PortalA" parent="." instance=ExtResource("3_vb7kc")]
 position = Vector2(104, 544)
-rotation = -0.598118
+rotation = -0.42814
 target_portal = NodePath("../PortalB")
 
 [node name="PortalB" parent="." instance=ExtResource("4_55uln")]
 position = Vector2(1072, 88.0001)
-rotation = -0.769345
+rotation = -3.60612
 target_portal = NodePath("../PortalA")
 
 [node name="Enemy" parent="." instance=ExtResource("5_op2xl")]
