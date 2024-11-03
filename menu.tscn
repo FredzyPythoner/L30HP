@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtelmfy28r16e"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_4rlnw"]
+[ext_resource type="Texture2D" uid="uid://buqhaeq5jnq6q" path="res://radial-gradient.png" id="2_cg4qw"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rlnw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = -4374.0
+offset_top = -3706.0
+offset_right = 6049.0
+offset_bottom = 3957.0
+color = Color(0.0588235, 0.0196078, 0.176471, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(918.59, 399.656)
+rotation = 0.872665
+scale = Vector2(1.0625, 242.31)
+energy = 1.24
+texture = ExtResource("2_cg4qw")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(2078.59, 1055.66)
+rotation = 0.872665
+scale = Vector2(1.0625, 242.31)
+energy = 1.24
+texture = ExtResource("2_cg4qw")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(2078.59, 399.656)
+rotation = -0.872665
+scale = Vector2(1.0625, 242.31)
+energy = 1.24
+texture = ExtResource("2_cg4qw")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(918.59, 1047.66)
+rotation = -0.872665
+scale = Vector2(1.0625, 242.31)
+energy = 1.24
+texture = ExtResource("2_cg4qw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -425.5
+offset_bottom = 425.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.713502, 0.581531)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.372549, 0.780392, 0.364706, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "Play"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.211765, 0.52549, 0.560784, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.12549, 0.211765, 0.443137, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
