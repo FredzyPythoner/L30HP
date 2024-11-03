@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://nnd5gclkof5k"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_xuau7"]
+[ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="2_wpogg"]
+[ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="3_8fk0q"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xuau7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1983.0
+offset_top = -1311.0
+offset_right = -807.0
+offset_bottom = -647.0
+scale = Vector2(4.44122, 4.87388)
+color = Color(0.0588235, 0.0196078, 0.176471, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("2_wpogg")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(0, 664)
+energy = 0.5
+texture = ExtResource("2_wpogg")
+texture_scale = 3.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(1176, 664)
+energy = 0.5
+texture = ExtResource("2_wpogg")
+texture_scale = 3.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(1176, 0)
+energy = 0.5
+texture = ExtResource("2_wpogg")
+texture_scale = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1357.0
+offset_top = -580.0
+offset_right = 1357.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_8fk0q")
+theme_override_font_sizes/font_size = 500
+text = "Game Over"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8fk0q")
+theme_override_font_sizes/font_size = 90
+text = "Restart"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

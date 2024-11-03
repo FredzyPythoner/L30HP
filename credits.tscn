@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmjp5xseuxn57"]
+[gd_scene load_steps=4 format=3 uid="uid://bmjp5xseuxn57"]
 
 [ext_resource type="Texture2D" uid="uid://buqhaeq5jnq6q" path="res://radial-gradient.png" id="1_ht8mb"]
 [ext_resource type="Script" path="res://credits.gd" id="1_ujbis"]
+[ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="3_ibwjo"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -59,12 +60,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.211765, 0.52549, 0.560784, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibwjo")
 theme_override_font_sizes/font_size = 400
 text = "Credits:"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.372549, 0.780392, 0.364706, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibwjo")
 theme_override_font_sizes/font_size = 100
 text = "Grafisk Design: Dziugas
 Visuelt Design: Frederik
@@ -79,6 +82,7 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.12549, 0.211765, 0.443137, 1)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibwjo")
 theme_override_font_sizes/font_size = 100
 text = "Return to main menu"
 

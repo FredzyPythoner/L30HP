@@ -75,11 +75,11 @@ func take_damage(amount: int):
 
 	if health <= 0:
 		die()
-
 func die():
 	print("Player has died!")
 	#queue_free()  # This will remove the player from the scene
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://Game_over.tscn")
+
 
 
 var player: Node2D
