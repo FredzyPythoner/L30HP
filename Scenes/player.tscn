@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2eda7jlsd8uw"]
+[gd_scene load_steps=7 format=3 uid="uid://b2eda7jlsd8uw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dso0s"]
 [ext_resource type="PackedScene" uid="uid://6fgolk01go3h" path="res://Scenes/bullet.tscn" id="2_b738u"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_fygl8"]
+[ext_resource type="Texture2D" uid="uid://buqhaeq5jnq6q" path="res://radial-gradient.png" id="4_wqg7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2itow"]
 size = Vector2(64, 64)
@@ -58,3 +59,10 @@ angular_velocity_max = 581.82
 scale_amount_min = 3.0
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_ga6su")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+color = Color(1, 0.553641, 0.427846, 1)
+energy = 0.5
+texture = ExtResource("4_wqg7n")
+texture_scale = 0.5

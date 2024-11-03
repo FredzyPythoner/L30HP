@@ -2,6 +2,7 @@ extends Node2D
 
 # Exported variables
 @export var enemy_scene = preload("res://Scenes/enemy.tscn")
+@export var enemy_scene2 = preload("res://Scenes/enemy2.tscn")
 @export var spawn_area = Vector2(2000, 2000) # Define the spawn area size
 @export var spawn_interval = 1.0        # Time in seconds between spawns
 @export var player: Node2D

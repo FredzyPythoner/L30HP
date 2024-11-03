@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://ywwug3a5ogtm"]
+
+[ext_resource type="Texture2D" uid="uid://cguwv6nj3qttw" path="res://fire_01.png" id="1_75mp1"]
+
+[sub_resource type="Curve" id="Curve_vffcv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.159341, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3wu1v"]
+curve = SubResource("Curve_vffcv")
+
+[sub_resource type="Gradient" id="Gradient_6icd3"]
+offsets = PackedFloat32Array(0, 0.0565476, 0.113095)
+colors = PackedColorArray(0, 0.0166669, 1, 1, 0.816667, 0, 1, 1, 0, 1, 0.816667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8rvul"]
+gradient = SubResource("Gradient_6icd3")
+
+[sub_resource type="Curve" id="Curve_nfe8o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i8kav"]
+curve = SubResource("Curve_nfe8o")
+
+[sub_resource type="Curve" id="Curve_2ov66"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994505, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_05n5p"]
+curve = SubResource("Curve_2ov66")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dmfjl"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 2, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 100.0
+emission_ring_inner_radius = 50.0
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -86.51
+radial_accel_max = 26.97
+tangential_accel_min = 628.26
+tangential_accel_max = 632.51
+scale_min = 0.03
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_05n5p")
+color_ramp = SubResource("GradientTexture1D_8rvul")
+alpha_curve = SubResource("CurveTexture_3wu1v")
+emission_curve = SubResource("CurveTexture_i8kav")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(500, 282)
+amount = 4510
+process_material = SubResource("ParticleProcessMaterial_dmfjl")
+texture = ExtResource("1_75mp1")
+lifetime = 5.0

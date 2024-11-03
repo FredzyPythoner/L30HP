@@ -1,10 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpdlhkkpp5qla"]
+[gd_scene load_steps=5 format=3 uid="uid://bri4ysn652awf"]
 
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_eoybj"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fou4e"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hubv6"]
+[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_coxv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdsy"]
 size = Vector2(32, 32)
@@ -19,15 +15,12 @@ offsets = PackedFloat32Array(0, 0.52, 1)
 colors = PackedColorArray(0.584314, 0.0862745, 0, 1, 0.94, 0.325867, 0.0188, 1, 1, 1, 1, 1)
 
 [node name="Enemy" type="CharacterBody2D" groups=["mobs"]]
-material = SubResource("CanvasItemMaterial_fou4e")
-scale = Vector2(0.5, 0.5)
-script = ExtResource("1_eoybj")
+script = ExtResource("1_coxv4")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-material = SubResource("CanvasItemMaterial_hubv6")
 position = Vector2(0, -32)
 scale = Vector2(2, 2)
-color = Color(0.372549, 0.780392, 0.364706, 1)
+color = Color(0.64, 0, 0.469333, 1)
 polygon = PackedVector2Array(0, 24, -8, 24, -8, 8, 8, 8, 8, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -45,6 +38,23 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 30.0
 initial_velocity_max = 80.0
+scale_amount_min = 4.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_x8kyg")
+color_ramp = SubResource("Gradient_3he2j")
+
+[node name="TakeDamageParticles" type="CPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 250
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+randomness = 0.42
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
 scale_amount_min = 4.0
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_x8kyg")

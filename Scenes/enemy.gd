@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 var damage: int = 20
-var health: int = 20
+var health: int = 40
 var player: Node2D
 
 func take_damage(amount: int):
 	health -= amount
 	print("Enemy took damage: ", amount)
 	print("Remaining health: ", health)
+	#$TakeDamageParticles.emitting = true
 
 	if health <= 0:
 		

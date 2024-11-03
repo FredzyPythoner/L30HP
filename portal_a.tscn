@@ -1,23 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://elvsf2pqwa8n"]
+[gd_scene load_steps=13 format=3 uid="uid://elvsf2pqwa8n"]
 
 [ext_resource type="Script" path="res://PortalA.gd" id="1_fp4wu"]
+[ext_resource type="Texture2D" uid="uid://cguwv6nj3qttw" path="res://fire_01.png" id="2_f60i2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3npj2"]
 radius = 24.0
 height = 96.0
 
+[sub_resource type="Curve" id="Curve_omxc0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.159341, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dh5if"]
+curve = SubResource("Curve_omxc0")
+
+[sub_resource type="Gradient" id="Gradient_l6ks7"]
+offsets = PackedFloat32Array(0, 0.0565476, 0.113095)
+colors = PackedColorArray(0, 0.0166669, 1, 1, 0.816667, 0, 1, 1, 0, 1, 0.816667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7wcbe"]
+gradient = SubResource("Gradient_l6ks7")
+
+[sub_resource type="Curve" id="Curve_nsf7w"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j3pt6"]
+curve = SubResource("Curve_nsf7w")
+
+[sub_resource type="Curve" id="Curve_y57w8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994505, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1bxrc"]
+curve = SubResource("Curve_y57w8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tkprd"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 2, 1)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 100.0
+emission_ring_inner_radius = 50.0
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -86.51
+radial_accel_max = 26.97
+tangential_accel_min = 628.26
+tangential_accel_max = 632.51
+scale_min = 0.03
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_1bxrc")
+color_ramp = SubResource("GradientTexture1D_7wcbe")
+alpha_curve = SubResource("CurveTexture_dh5if")
+emission_curve = SubResource("CurveTexture_j3pt6")
+
 [node name="PortalA" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_fp4wu")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+visible = false
 position = Vector2(-8, 0)
-scale = Vector2(2, 2)
 color = Color(0.12549, 0.211765, 0.443137, 1)
 polygon = PackedVector2Array(0, -24, -8, -16, -8, 16, 0, 24, 8, 24, 16, 16, 16, -16, 8, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_3npj2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 0)
+amount = 4510
+process_material = SubResource("ParticleProcessMaterial_tkprd")
+texture = ExtResource("2_f60i2")
+lifetime = 5.0
