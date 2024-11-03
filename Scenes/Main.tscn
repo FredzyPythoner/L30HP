@@ -10,11 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_dwb72"]
 [ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="9_i4070"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="10_3w2fj"]
-[ext_resource type="PackedScene" uid="uid://bri4ysn652awf" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
 [ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
 [ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
-[ext_resource type="Texture2D" uid="uid://cleyxj5n2h0ye" path="res://Assets/bar_outline_2.png" id="14_10iui"]
-[ext_resource type="Texture2D" uid="uid://mpayuv2it3qc" path="res://Assets/bar2.png" id="15_ghm6b"]
+[ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="14_5ag2y"]
+[ext_resource type="Texture2D" uid="uid://bqcuolsf5f62w" path="res://Assets/bar_2.png" id="15_co6fs"]
 [ext_resource type="Script" path="res://Scenes/texture_progress_bar.gd" id="16_e6w87"]
 
 [sub_resource type="Environment" id="Environment_qdq0q"]
@@ -122,7 +122,7 @@ offset_bottom = 1663.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.639161, 0.380574)
-texture_under = ExtResource("14_10iui")
-texture_progress = ExtResource("15_ghm6b")
+texture_under = ExtResource("14_5ag2y")
+texture_progress = ExtResource("15_co6fs")
 script = ExtResource("16_e6w87")
 player = NodePath("../../Player")
