@@ -17,7 +17,7 @@ func take_damage(amount: int):
 
 func die():
 	print("Enemy has died!")
-	$Polygon2D.visible = false
+	$Sprite2D.visible = false
 	$Explosion.emitting = true
 	await $Explosion.finished
 	queue_free()  # This will remove the player from the scene
@@ -38,7 +38,8 @@ func _process(delta: float) -> void:
 		if collision and collision.get_collider().has_method("take_damage"):
 			collision.get_collider().take_damage(10)
 			queue_free()
-
+		var dir = (player.global_position - global_position).normalized()
+		look_at(player.global_position)
 
 
 func _on_body_entered(body: Node2D) -> void:

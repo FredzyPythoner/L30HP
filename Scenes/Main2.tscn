@@ -35,6 +35,7 @@ position = Vector2(776, 284)
 target_portal = NodePath("../PortalA")
 
 [node name="Enemy" parent="." instance=ExtResource("5_ilb6f")]
+material = null
 position = Vector2(431, 409)
 
 [node name="EnemySpawn" type="Node2D" parent="." node_paths=PackedStringArray("player")]
