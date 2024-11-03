@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_dwb72"]
 [ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="9_i4070"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="10_3w2fj"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
+[ext_resource type="PackedScene" uid="uid://bri4ysn652awf" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
 [ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
 [ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
 [ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="14_5ag2y"]
