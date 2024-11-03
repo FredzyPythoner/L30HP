@@ -18,6 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://global.gd"
+Healthprogress="*res://healthprogress.gd"
+
+[display]
+
+mouse_cursor/custom_image="res://cursor.png"
+
+[editor]
+
+version_control/custom_image_hotspot=Vector2(0, 0)
 
 [input]
 
