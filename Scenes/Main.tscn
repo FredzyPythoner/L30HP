@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=15 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
 [ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="1_pvi3p"]
+[ext_resource type="Texture2D" uid="uid://g2mneud1y286" path="res://Assets/eddeerkop.png" id="3_o3faf"]
 [ext_resource type="PackedScene" uid="uid://elvsf2pqwa8n" path="res://portal_a.tscn" id="3_vb7kc"]
 [ext_resource type="PackedScene" uid="uid://c3o1menu3bti2" path="res://portal_b.tscn" id="4_55uln"]
 [ext_resource type="PackedScene" uid="uid://cpdlhkkpp5qla" path="res://Scenes/enemy.tscn" id="5_op2xl"]
@@ -9,7 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_dwb72"]
 [ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="9_i4070"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="10_3w2fj"]
-[ext_resource type="PackedScene" uid="uid://bri4ysn652awf" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
+[ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
+[ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
 
 [sub_resource type="Environment" id="Environment_qdq0q"]
 background_mode = 3
@@ -23,6 +26,21 @@ glow_levels/4 = 1.0
 offset_right = 1176.0
 offset_bottom = 664.0
 color = Color(0.0588235, 0.0196078, 0.176471, 1)
+
+[node name="Sten" type="Sprite2D" parent="."]
+modulate = Color(0.294641, 0.294641, 0.294641, 1)
+position = Vector2(392, 529)
+scale = Vector2(0.0531212, 0.0537631)
+texture = ExtResource("11_nvrsi")
+
+[node name="Spindelvæv" type="Sprite2D" parent="."]
+position = Vector2(393, 520)
+scale = Vector2(0.103597, 0.101147)
+texture = ExtResource("12_cpnhj")
+
+[node name="Eddeerkop" type="Sprite2D" parent="."]
+position = Vector2(891, 135)
+texture = ExtResource("3_o3faf")
 
 [node name="Player" parent="." instance=ExtResource("1_pvi3p")]
 position = Vector2(544, 288)

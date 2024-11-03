@@ -66,13 +66,13 @@ text = "Credits:"
 modulate = Color(0.372549, 0.780392, 0.364706, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
-text = "GFX: Dziugas
-VFX: Frederik
-Sound Design: Alfred
-Game Design: Marvin and Leo
+text = "Grafisk Design: Dziugas
+Visuelt Design: Frederik
+Lyddesign: Alfred
+Spildesign: Marvin og Leo
 Scripting: Marvin, Leo and some ChatGPT
-Putting the whole thing together: Leo
-Camera Movement: Leo
+Sætte delene sammen: Leo
+Kamera: Leo
 Gui: Marvin"
 horizontal_alignment = 1
 
