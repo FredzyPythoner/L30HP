@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7dakq8py00oy"]
+[gd_scene load_steps=21 format=3 uid="uid://b7dakq8py00oy"]
 
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
 [ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_nxcho"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="8_dwb72"]
 [ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="9_i4070"]
 [ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="10_3w2fj"]
-[ext_resource type="PackedScene" uid="uid://bri4ysn652awf" path="res://Scenes/enemy2.tscn" id="10_qtgh1"]
 [ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="11_nvrsi"]
 [ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="12_cpnhj"]
 [ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="14_5ag2y"]
@@ -102,10 +101,6 @@ autoplay = true
 [node name="AudioShoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_i4070")
 volume_db = -13.867
-
-[node name="Enemy2" parent="." instance=ExtResource("10_qtgh1")]
-visible = false
-position = Vector2(528, 520)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.5
