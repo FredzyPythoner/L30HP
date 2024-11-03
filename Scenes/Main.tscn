@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-[gd_scene load_steps=20 format=3 uid="uid://b7dakq8py00oy"]
-=======
 [gd_scene load_steps=19 format=3 uid="uid://b7dakq8py00oy"]
->>>>>>> 2b838c9a589557f142f943ceff180fc8dce7d789
 
-[ext_resource type="Texture2D" uid="uid://ddmfnnv8qfmkk" path="res://Assets/Scene.png" id="1_5qtut"]
-[ext_resource type="Texture2D" uid="uid://bv8pd4sfk3l5k" path="res://Assets/Scene3.png" id="1_foyxp"]
 [ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="1_j3jhu"]
 [ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_nxcho"]
 [ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="1_pvi3p"]
@@ -34,28 +28,15 @@ glow_blend_mode = 0
 
 [node name="Main" type="Node2D"]
 
-<<<<<<< HEAD
-[node name="Scene3" type="Sprite2D" parent="."]
-position = Vector2(564, 336)
-scale = Vector2(1.425, 1.53611)
-texture = ExtResource("1_foyxp")
-=======
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(592, 336)
 texture = ExtResource("1_nxcho")
->>>>>>> 2b838c9a589557f142f943ceff180fc8dce7d789
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 offset_right = 1176.0
 offset_bottom = 664.0
 color = Color(0.0588235, 0.0196078, 0.176471, 1)
-
-[node name="Scene" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.495334, 0.519042, 0.491486, 1)
-position = Vector2(598, 318)
-texture = ExtResource("1_5qtut")
 
 [node name="Sten" type="Sprite2D" parent="."]
 modulate = Color(0.294641, 0.294641, 0.294641, 1)
@@ -82,20 +63,14 @@ target_portal = NodePath("../PortalB")
 
 [node name="PortalB" parent="." instance=ExtResource("4_55uln")]
 position = Vector2(1072, 88.0001)
-rotation = -3.60612
+rotation = -3.59472
 target_portal = NodePath("../PortalA")
 
 [node name="Enemy" parent="." instance=ExtResource("5_op2xl")]
 modulate = Color(1.5, 1.5, 1.5, 1)
-material = null
 position = Vector2(-616, 1448)
-rotation = -6.28931
-
-[node name="ColorRect" type="ColorRect" parent="Enemy"]
-offset_left = 41.0
-offset_top = -387.0
-offset_right = 493.0
-offset_bottom = -327.0
+rotation = 0.0
+scale = Vector2(0.5, 0.5)
 
 [node name="EnemySpawn" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(544, 288)
@@ -116,6 +91,7 @@ stream = ExtResource("9_i4070")
 volume_db = -13.867
 
 [node name="Enemy2" parent="." instance=ExtResource("10_qtgh1")]
+visible = false
 position = Vector2(528, 520)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -144,7 +120,6 @@ texture_scale = 3.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
-modulate = Color(0.764437, 0.000454932, 0.765031, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
