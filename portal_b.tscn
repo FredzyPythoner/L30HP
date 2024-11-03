@@ -58,7 +58,6 @@ alpha_curve = SubResource("CurveTexture_fpkxb")
 emission_curve = SubResource("CurveTexture_7tj2d")
 
 [node name="PortalB" instance=ExtResource("1_h5h2x")]
-scale = Vector2(0.6, 0.6)
 script = ExtResource("2_dgd45")
 
 [node name="Area2D" parent="." index="0"]
