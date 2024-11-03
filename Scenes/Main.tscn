@@ -30,11 +30,13 @@ color = Color(0.0588235, 0.0196078, 0.176471, 1)
 position = Vector2(544, 288)
 
 [node name="PortalA" parent="." instance=ExtResource("3_vb7kc")]
-position = Vector2(88, 480)
+position = Vector2(104, 544)
+rotation = -0.598118
 target_portal = NodePath("../PortalB")
 
 [node name="PortalB" parent="." instance=ExtResource("4_55uln")]
-position = Vector2(1048, 88)
+position = Vector2(1072, 88.0001)
+rotation = -0.769345
 scale = Vector2(1, 1)
 target_portal = NodePath("../PortalA")
 

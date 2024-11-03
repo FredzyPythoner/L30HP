@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var damage: int = 20
-var health: int = 100
+var health: int = 20
 var player: Node2D
 
 func take_damage(amount: int):

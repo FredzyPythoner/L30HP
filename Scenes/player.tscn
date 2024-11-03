@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2eda7jlsd8uw"]
+[gd_scene load_steps=6 format=3 uid="uid://b2eda7jlsd8uw"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_dso0s"]
 [ext_resource type="PackedScene" uid="uid://6fgolk01go3h" path="res://Scenes/bullet.tscn" id="2_b738u"]
+[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_fygl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2itow"]
 size = Vector2(64, 64)
@@ -23,6 +24,7 @@ drag_left_margin = 0.05
 drag_top_margin = 0.05
 drag_right_margin = 0.05
 drag_bottom_margin = 0.05
+script = ExtResource("3_fygl8")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-32, -32)
