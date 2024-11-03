@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://elvsf2pqwa8n"]
+[gd_scene load_steps=14 format=3 uid="uid://elvsf2pqwa8n"]
 
 [ext_resource type="Script" path="res://PortalA.gd" id="1_fp4wu"]
 [ext_resource type="Texture2D" uid="uid://cguwv6nj3qttw" path="res://fire_01.png" id="2_f60i2"]
+[ext_resource type="Texture2D" uid="uid://b0jeix41bbypx" path="res://Assets/portal.png" id="2_xg3j3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3npj2"]
-radius = 24.0
-height = 96.0
+radius = 10.6667
+height = 42.6667
 
 [sub_resource type="Curve" id="Curve_omxc0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.159341, 0), 0.0, 0.0, 0, 0]
@@ -62,6 +63,10 @@ script = ExtResource("1_fp4wu")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_xg3j3")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
 visible = false

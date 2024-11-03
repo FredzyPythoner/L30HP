@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3o1menu3bti2"]
+[gd_scene load_steps=15 format=3 uid="uid://c3o1menu3bti2"]
 
 [ext_resource type="PackedScene" uid="uid://elvsf2pqwa8n" path="res://portal_a.tscn" id="1_h5h2x"]
 [ext_resource type="Script" path="res://portalB.gd" id="2_dgd45"]
+[ext_resource type="Texture2D" uid="uid://b0jeix41bbypx" path="res://Assets/portal.png" id="3_gvqxw"]
 [ext_resource type="Texture2D" uid="uid://cguwv6nj3qttw" path="res://fire_01.png" id="3_nmk4t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdf75"]
-radius = 24.0
-height = 96.0
+radius = 10.6667
+height = 42.6667
 
 [sub_resource type="Curve" id="Curve_v0bom"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.159341, 0), 0.0, 0.0, 0, 0]
@@ -64,10 +65,10 @@ script = ExtResource("2_dgd45")
 visible = false
 scale = Vector2(1, 1)
 
-[node name="Polygon2D" parent="Area2D" index="0"]
+[node name="Polygon2D" parent="Area2D" index="1"]
 color = Color(0.12549, 0.211765, 0.443137, 1)
 
-[node name="CollisionShape2D" parent="Area2D" index="1"]
+[node name="CollisionShape2D" parent="Area2D" index="2"]
 visible = false
 
 [node name="GPUParticles2D" parent="." index="1"]
@@ -78,13 +79,17 @@ scale = Vector2(0.5, 0.5)
 [node name="Area2D2" type="Area2D" parent="." index="2"]
 scale = Vector2(0.5, 0.5)
 
-[node name="Polygon2D" type="Polygon2D" parent="Area2D2" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2" index="0"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_gvqxw")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2" index="1"]
 visible = false
 position = Vector2(-8, 0)
 color = Color(0.12549, 0.211765, 0.443137, 1)
 polygon = PackedVector2Array(0, -24, -8, -16, -8, 16, 0, 24, 8, 24, 16, 16, 16, -16, 8, -24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="2"]
 scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_rdf75")
 
