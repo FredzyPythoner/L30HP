@@ -19,6 +19,7 @@ script = ExtResource("1_dso0s")
 Bullet = ExtResource("2_b738u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 26)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_left_margin = 0.05
@@ -27,27 +28,21 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.05
 script = ExtResource("3_fygl8")
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(-32, -32)
-color = Color(0.835294, 0.835294, 0.843137, 1)
-polygon = PackedVector2Array(40, 8, 32, 0, 80, 0, 80, 8, 80, 16, 40, 16)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-8, 0)
+position = Vector2(-7.99999, 26)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_kndeb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 0)
+position = Vector2(-8, 26)
 shape = SubResource("RectangleShape2D_2itow")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(42, -26)
+position = Vector2(42, 0)
 
 [node name="fireparticles" type="CPUParticles2D" parent="."]
-position = Vector2(48, -24)
+position = Vector2(42, 0)
 emitting = false
 amount = 60
 lifetime = 0.3
@@ -65,7 +60,7 @@ color_ramp = SubResource("Gradient_ga6su")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
+position = Vector2(-6, 24)
 color = Color(1, 0.553641, 0.427846, 1)
-energy = 0.5
+energy = 1.12
 texture = ExtResource("4_wqg7n")
-texture_scale = 0.5

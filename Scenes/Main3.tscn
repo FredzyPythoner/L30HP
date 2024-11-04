@@ -1,0 +1,178 @@
+[gd_scene load_steps=20 format=3 uid="uid://wuf15vdx1vuy"]
+
+[ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_lxqn2"]
+[ext_resource type="Texture2D" uid="uid://bv8pd4sfk3l5k" path="res://Assets/Scene3.png" id="2_8hrmi"]
+[ext_resource type="Texture2D" uid="uid://cpoahdbay55oq" path="res://Assets/sten.png" id="3_pjjyr"]
+[ext_resource type="Texture2D" uid="uid://bshjtcprrt7by" path="res://Assets/spindelvæv.png" id="4_e6k7k"]
+[ext_resource type="Texture2D" uid="uid://g2mneud1y286" path="res://Assets/eddeerkop.png" id="5_ofxx0"]
+[ext_resource type="PackedScene" uid="uid://b2eda7jlsd8uw" path="res://Scenes/player.tscn" id="6_x62po"]
+[ext_resource type="PackedScene" uid="uid://elvsf2pqwa8n" path="res://portal_a.tscn" id="7_8n1wf"]
+[ext_resource type="PackedScene" uid="uid://c3o1menu3bti2" path="res://portal_b.tscn" id="8_a1exe"]
+[ext_resource type="PackedScene" uid="uid://cpdlhkkpp5qla" path="res://Scenes/enemy.tscn" id="9_2sbuw"]
+[ext_resource type="Script" path="res://Scenes/enemy_spawn.gd" id="10_vynwm"]
+[ext_resource type="PackedScene" uid="uid://dksbi625srbln" path="res://Scenes/kill_count_2.tscn" id="11_ho5oi"]
+[ext_resource type="AudioStream" uid="uid://bsxonxmg1v48k" path="res://Assets/Sounds/spil musik 2.mp3" id="12_hnceq"]
+[ext_resource type="AudioStream" uid="uid://0iungyeh0go7" path="res://Assets/Sounds/laserShoot.wav" id="13_0g7m7"]
+[ext_resource type="Texture2D" uid="uid://d2y3opvxk6vvr" path="res://light.png" id="14_hc82m"]
+[ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="15_rfm8a"]
+[ext_resource type="Texture2D" uid="uid://bqcuolsf5f62w" path="res://Assets/bar_2.png" id="16_4pjxw"]
+[ext_resource type="Script" path="res://Scenes/texture_progress_bar.gd" id="17_nfyl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sniuc"]
+size = Vector2(1816, 22)
+
+[sub_resource type="Environment" id="Environment_qdq0q"]
+background_mode = 3
+tonemap_mode = 3
+tonemap_exposure = 0.33
+glow_enabled = true
+glow_levels/4 = 1.0
+glow_intensity = 1.25
+glow_blend_mode = 0
+
+[node name="Main" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8279.0
+offset_top = -4874.0
+offset_right = -6490.0
+offset_bottom = -3789.0
+scale = Vector2(10, 10)
+color = Color(0.0588235, 0.0196078, 0.176471, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+energy = 1.75
+texture = ExtResource("14_hc82m")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(166, 727)
+energy = 1.75
+texture = ExtResource("14_hc82m")
+texture_scale = 3.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(1176, 664)
+energy = 1.75
+texture = ExtResource("14_hc82m")
+texture_scale = 3.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(1176, 0)
+energy = 1.75
+texture = ExtResource("14_hc82m")
+texture_scale = 3.0
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(586, -224)
+shape = SubResource("RectangleShape2D_sniuc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(589, 852)
+shape = SubResource("RectangleShape2D_sniuc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D2"]
+position = Vector2(-324, 281)
+rotation = -1.57311
+shape = SubResource("RectangleShape2D_sniuc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border/StaticBody2D2"]
+position = Vector2(1499, 310)
+rotation = -1.57004
+shape = SubResource("RectangleShape2D_sniuc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(592, 336)
+texture = ExtResource("1_lxqn2")
+
+[node name="Scene3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.686275, 0.611765, 0.686275, 1)
+position = Vector2(528, 229)
+scale = Vector2(1.61023, 2.12276)
+texture = ExtResource("2_8hrmi")
+
+[node name="Sten" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.294641, 0.294641, 0.294641, 1)
+position = Vector2(392, 529)
+scale = Vector2(0.0531212, 0.0537631)
+texture = ExtResource("3_pjjyr")
+
+[node name="Spindelvæv" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(393, 520)
+scale = Vector2(0.103597, 0.101147)
+texture = ExtResource("4_e6k7k")
+
+[node name="Eddeerkop" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(891, 135)
+texture = ExtResource("5_ofxx0")
+
+[node name="Player" parent="." instance=ExtResource("6_x62po")]
+position = Vector2(544, 288)
+
+[node name="PortalA" parent="." instance=ExtResource("7_8n1wf")]
+position = Vector2(104, 544)
+rotation = -0.42814
+target_portal = NodePath("../PortalB")
+
+[node name="PortalB" parent="." instance=ExtResource("8_a1exe")]
+position = Vector2(1072, 88.0001)
+rotation = -3.59472
+target_portal = NodePath("../PortalA")
+
+[node name="Enemy" parent="." instance=ExtResource("9_2sbuw")]
+modulate = Color(1.5, 1.5, 1.5, 1)
+position = Vector2(-616, 1448)
+rotation = 0.0
+scale = Vector2(0.5, 0.5)
+
+[node name="EnemySpawn" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(544, 288)
+script = ExtResource("10_vynwm")
+player = NodePath("../Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qdq0q")
+
+[node name="Killcount" parent="." instance=ExtResource("11_ho5oi")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_hnceq")
+autoplay = true
+
+[node name="AudioShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_0g7m7")
+volume_db = -13.867
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = 546.0
+offset_right = 509.0
+offset_bottom = 1570.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.639161, 0.380574)
+texture_under = ExtResource("15_rfm8a")
+texture_progress = ExtResource("16_4pjxw")
+script = ExtResource("17_nfyl0")
+player = NodePath("../../Player")
+metadata/_edit_use_anchors_ = true

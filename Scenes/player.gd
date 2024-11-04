@@ -52,6 +52,7 @@ func _physics_process(delta):
 		on_some_event()
 		$fireparticles.emitting = true
 
+
 func play_sound():
 	sound_player.play()  # This plays the sasound
 
