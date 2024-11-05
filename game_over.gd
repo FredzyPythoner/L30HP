@@ -2,5 +2,5 @@ extends Control
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main3.tscn")
 	Global.kills = 0

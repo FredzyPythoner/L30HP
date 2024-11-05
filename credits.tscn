@@ -9,8 +9,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 279.0
+offset_top = 19.0
+offset_right = 279.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.563485, 0.561413)
 script = ExtResource("1_ujbis")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -22,6 +27,7 @@ offset_bottom = 3957.0
 color = Color(0.0588235, 0.0196078, 0.176471, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(918.59, 399.656)
 rotation = 0.872665
 scale = Vector2(1.0625, 242.31)
@@ -29,6 +35,7 @@ energy = 1.24
 texture = ExtResource("1_ht8mb")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(2078.59, 1055.66)
 rotation = 0.872665
 scale = Vector2(1.0625, 242.31)
@@ -36,6 +43,7 @@ energy = 1.24
 texture = ExtResource("1_ht8mb")
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(2078.59, 399.656)
 rotation = -0.872665
 scale = Vector2(1.0625, 242.31)
@@ -43,6 +51,7 @@ energy = 1.24
 texture = ExtResource("1_ht8mb")
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(918.59, 1047.66)
 rotation = -0.872665
 scale = Vector2(1.0625, 242.31)
@@ -64,20 +73,21 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ibwjo")
 theme_override_font_sizes/font_size = 400
 text = "Credits:"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.372549, 0.780392, 0.364706, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ibwjo")
 theme_override_font_sizes/font_size = 100
-text = "Grafisk Design: Dziugas
-Visuelt Design: Frederik
-Lyddesign: Alfred
-Spildesign: Marvin og Leo
-Scripting: Marvin, Leo, Alfred and some ChatGPT
-Sætte delene sammen: Leo
-Kamera: Leo
-Gui: Marvin"
+text = "GFX: Dziugas, Leo
+VFX: Frederik, Leo
+SFX: Alfred, Marvin
+Game Designers: Marvin, Leo
+Programmers: Marvin, Leo, Alfred
+Camera: Leo
+UI: Marvin
+UX: Leo"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]

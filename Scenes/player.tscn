@@ -20,6 +20,7 @@ Bullet = ExtResource("2_b738u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 26)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_left_margin = 0.05

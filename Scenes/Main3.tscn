@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://wuf15vdx1vuy"]
+[gd_scene load_steps=22 format=3 uid="uid://wuf15vdx1vuy"]
 
 [ext_resource type="Texture2D" uid="uid://dsokf7vmargn" path="res://Scene_render.png" id="1_lxqn2"]
 [ext_resource type="Texture2D" uid="uid://bv8pd4sfk3l5k" path="res://Assets/Scene3.png" id="2_8hrmi"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bhxlxb1vb6m8h" path="res://Assets/bar_outline_real.png" id="15_rfm8a"]
 [ext_resource type="Texture2D" uid="uid://bqcuolsf5f62w" path="res://Assets/bar_2.png" id="16_4pjxw"]
 [ext_resource type="Script" path="res://Scenes/texture_progress_bar.gd" id="17_nfyl0"]
+[ext_resource type="Script" path="res://Scenes/healthpercentage.gd" id="18_3rw4a"]
+[ext_resource type="FontFile" uid="uid://biw8wnukt2uir" path="res://SairaStencilOne-Regular.ttf" id="18_c35cg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sniuc"]
 size = Vector2(1816, 22)
@@ -164,10 +166,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -575.0
-offset_top = 546.0
-offset_right = 509.0
-offset_bottom = 1570.0
+offset_left = -1056.0
+offset_top = 304.0
+offset_right = 28.0
+offset_bottom = 1328.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.639161, 0.380574)
@@ -176,3 +178,14 @@ texture_progress = ExtResource("16_4pjxw")
 script = ExtResource("17_nfyl0")
 player = NodePath("../../Player")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureProgressBar" node_paths=PackedStringArray("player")]
+offset_left = 267.538
+offset_top = 223.347
+offset_right = 307.538
+offset_bottom = 333.347
+scale = Vector2(1.46017, 1.28886)
+theme_override_fonts/font = ExtResource("18_c35cg")
+theme_override_font_sizes/font_size = 80
+script = ExtResource("18_3rw4a")
+player = NodePath("../../../Player")
