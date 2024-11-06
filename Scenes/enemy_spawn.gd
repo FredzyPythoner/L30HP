@@ -1,9 +1,10 @@
 extends Node2D
 
+var time = 0.001
 # Exported variables
 @export var enemy_scene = preload("res://Scenes/enemy.tscn")
-@export var spawn_area = Vector2(500, 500) # Define the spawn area size
-@export var spawn_interval = 1.0        # Time in seconds between spawns
+@export var spawn_area = Vector2(800, 500) # Define the spawn area size
+@export var spawn_interval = 1000        # Time in seconds between spawns
 @export var player: Node2D
 
 # Internal timer for spawning
@@ -15,7 +16,9 @@ func _ready():
 
 func _process(delta):
 	# Decrement the spawn timer
+	time += (delta/10)
 	_spawn_timer -= delta
+	_spawn_timer -= time
 
 	# Check if it's time to spawn an enemy
 	if _spawn_timer <= 0:

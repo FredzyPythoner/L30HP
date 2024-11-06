@@ -4,6 +4,8 @@ extends CharacterBody2D
 # Movement speed variable
 var speed = 200
 var health: int = 100
+@export var timer = CollisionShape2D
+
 
 @export var Bullet : PackedScene
 @onready var portal_a = $PortalA # Path to Portal A
@@ -15,13 +17,13 @@ func teleport(target_portal):
 	global_position = target_portal.global_position
 
 
-
 func _physics_process(delta):
 	# Get the mouse position in global coordinates
 	var mouse_position = get_global_mouse_position()
-
 	# Rotate to face the mouse position
 	look_at(mouse_position)
+	
+	timer.timerrr += (delta)
 
 	# Initialize velocity
 	velocity = Vector2()
@@ -65,6 +67,9 @@ func on_some_event():
 
 func shoot():
 	var b = Bullet.instantiate()
+	print(timer.timerrr)
+	if timer.timerrr > 60:
+		b.damage = 400
 	get_parent().add_child(b)
 	b.global_transform = $Muzzle.global_transform
 

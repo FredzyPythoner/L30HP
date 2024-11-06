@@ -152,6 +152,7 @@ environment = SubResource("Environment_qdq0q")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_hnceq")
+volume_db = -80.0
 autoplay = true
 
 [node name="AudioShoot" type="AudioStreamPlayer2D" parent="."]
@@ -180,6 +181,7 @@ player = NodePath("../../Player")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureProgressBar" node_paths=PackedStringArray("player")]
+layout_mode = 0
 offset_left = 267.538
 offset_top = 223.347
 offset_right = 307.538

@@ -1,5 +1,7 @@
 extends Area2D
 
+var color = Polygon2D
+var timer: int = 0
 var speed = 750
 var linear_velocity = 100
 func _physics_process(delta):
@@ -10,7 +12,6 @@ func _on_Bullet_body_entered(body):
 	if body.is_in_group("mobs"):
 		body.queue_free()
 	queue_free()
-
 
 var damage: int = 20
 

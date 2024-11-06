@@ -77,8 +77,8 @@ theme_override_font_sizes/font_size = 500
 text = "Game Over"
 
 [node name="KillCount" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_jjufp")]
-position = Vector2(1379, 670)
-scale = Vector2(0.729977, 0.922385)
+position = Vector2(1336.29, 846.908)
+scale = Vector2(0.425428, 0.515012)
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
